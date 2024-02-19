@@ -1,5 +1,6 @@
 package Ficha_01;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex_09 {
@@ -10,6 +11,8 @@ public class Ex_09 {
                 socialSecurityWorkerRate = 0.11, socialSecurityCompanyRate = 0.2375, workerId,
                 grossSalary, totalFoodAllowance, totalIrsRetention,
                 socialSecurityWorker, socialSecurityCompany, netSalary;
+
+        String roundedNetSalary;
 
         System.out.println("insira o seu código numérico de funcionário:");
         workerId = input.nextDouble();
@@ -24,11 +27,16 @@ public class Ex_09 {
         socialSecurityCompany = grossSalary * socialSecurityCompanyRate;
         netSalary = grossSalary - totalIrsRetention - socialSecurityWorker - socialSecurityCompany;
 
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setMaximumFractionDigits(2);
+
+        roundedNetSalary = df.format(netSalary);
+
         System.out.println("O valor Ilíquido a receber é: " + grossSalary);
         System.out.println("O valor do subsídio de alimentação é: " + totalFoodAllowance);
         System.out.println("O valor da retenção de irs é: " + totalIrsRetention);
         System.out.println("O valor dos encargos à SS do funcionário é " + socialSecurityWorker + " e o da empresa é: " + socialSecurityCompany);
-        System.out.println("O valor líquido a receber é: " + netSalary);
+        System.out.println("O valor líquido a receber é: " + roundedNetSalary);
 
 
 
