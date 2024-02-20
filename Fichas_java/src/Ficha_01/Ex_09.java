@@ -38,11 +38,5 @@ public class Ex_09 {
         System.out.println("O valor dos encargos à SS do funcionário é " + socialSecurityWorker + " e o da empresa é: " + socialSecurityCompany);
         System.out.println("O valor líquido a receber é: " + roundedNetSalary);
 
-
-
-
-
-
-
     }
 }
