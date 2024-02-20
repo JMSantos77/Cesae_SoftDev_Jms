@@ -21,10 +21,10 @@ public class Ex_01 {
         num2= input.nextInt();
 
         //Somar num1 com num2
+        soma = num1 + num2;
 
         //Apresentar resultado
-        soma = num1 + num2;
-        System.out.println("Soma:"+soma);
+        System.out.println("Soma: "+soma);
 
 
     }

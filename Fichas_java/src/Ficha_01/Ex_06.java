@@ -27,7 +27,7 @@ public class Ex_06 {
         System.out.println("num2 agora é = " + num2);
 
  */
-        // Abordagem com duas variáveis
+        // Abordagem só com duas variáveis
         num1 = num1 + num2;
         num2 = num1 - num2;
         num1 = num1 - num2;

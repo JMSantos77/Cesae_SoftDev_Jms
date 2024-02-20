@@ -14,10 +14,10 @@ public class Ex_03 {
         System.out.println("Introduza o tamanho da altura: ");
         altura = input.nextDouble();
 
-        area = base * altura;
         perimetro = 2 * (base + altura);
+        area = base * altura;
 
-        System.out.println("O perimetro é: " + perimetro);
-        System.out.println("A área é: " + area);
+        System.out.println("O perimetro é: " + perimetro + "m");
+        System.out.println("A área é: " + area + "M/2");
     }
 }

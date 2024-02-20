@@ -19,12 +19,20 @@ public class Ex_02 {
         multi = num1 * num2;
         div = num1 / num2;
 
-        System.out.println("Soma: "+ soma);
+        System.out.println("Soma: " + soma);
         System.out.println("Subtração: " + sub);
         System.out.println("Multiplicação: " + multi);
         System.out.println("Divisão: " + div);
 
 
+        /*
+        Outra abordagem seria criar uma só var que seria reaproveitada.
 
+        resultado = num1 + num2
+        System.out.println("Soma: " + resultado);
+        resultado = num1 - num2
+        System.out.println("Subtração: " + resultado);
+        ...
+         */
     }
 }

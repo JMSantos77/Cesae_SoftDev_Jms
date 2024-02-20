@@ -6,7 +6,8 @@ public class Ex_08 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-         int minMusica1, segMusica1, minMusica2, segMusica2, minMusica3, segMusica3, minMusica4, segMusica4, minMusica5, segMusica5, totalDurationInSec, hours, minutes, seconds;
+        int minMusica1, segMusica1, minMusica2, segMusica2, minMusica3, segMusica3,
+                minMusica4, segMusica4, minMusica5, segMusica5, totalDurationInSec, hours, minutes, seconds;
 
         System.out.println("Introduza minutos da música 1:");
         minMusica1 = input.nextInt();
@@ -44,6 +45,6 @@ public class Ex_08 {
         minutes = (totalDurationInSec % 3600) / 60;
         seconds = totalDurationInSec % 60;
 
-        System.out.println("A duração do álbum é: " + hours+"h:" + minutes+"m:" + seconds+"s");
+        System.out.println("A duração do álbum é: " + hours + "h:" + minutes + "m:" + seconds + "s");
     }
 }

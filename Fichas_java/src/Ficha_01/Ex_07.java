@@ -21,7 +21,8 @@ public class Ex_07 {
         valorTotal = valProdutoA + valProdutoB + valProdutoC;
 
         valorComDesconto = valorTotal - (valorTotal * 0.1);
+        //valorComDesconto = valorTotal * 0.9;
 
-        System.out.println("O valor com desconto é: " + valorComDesconto);
+        System.out.println("O valor final com desconto é: " + valorComDesconto);
     }
 }

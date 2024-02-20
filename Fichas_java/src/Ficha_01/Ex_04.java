@@ -8,13 +8,11 @@ public class Ex_04 {
 
         double raio, area;
 
-        System.out.println("Insira o valor do raio: ");
+        System.out.println("Insira o valor do raio:");
         raio = input.nextDouble();
 
         area = 3.1415 * (raio * raio);
 
-        System.out.println("A área da circunferência é: " + area);
-
+        System.out.println("A área da circunferência é : " + area);
     }
-
 }

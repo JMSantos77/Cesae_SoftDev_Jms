@@ -9,7 +9,7 @@ public class Ex_05 {
         double num1, num2, num3, average, pondAverage;
 
         System.out.println("Introduza o primeiro valor: ");
-        num1= input.nextDouble();
+        num1 = input.nextDouble();
 
         System.out.println("Introduza o segundo valor: ");
         num2 = input.nextDouble();
