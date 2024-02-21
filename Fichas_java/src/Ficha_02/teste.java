@@ -25,7 +25,7 @@ public class teste {
 
         for (int nota : notas) {
             //System.out.println(nota + " i");
-            double quantidadeNotas = valorEmEuros / nota;
+            int quantidadeNotas = valorEmEuros / nota;
             valorEmEuros %= nota;
             System.out.println(valorEmEuros + "val em € e nota: " +nota);
 
