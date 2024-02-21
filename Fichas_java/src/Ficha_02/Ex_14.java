@@ -8,7 +8,7 @@ public class Ex_14 {
         Scanner input = new Scanner(System.in);
 
         int num1, num2, num3;
-        int numbers[];
+        int[] numbers;
 
         System.out.println("Introduza um n.º:");
         num1 = input.nextInt();
@@ -31,5 +31,12 @@ public class Ex_14 {
             System.out.println(num);
         }
          */
+
+        //Ordem Inversa
+        for (int i = 0; i < numbers.length; i++) {
+            int length = numbers.length;
+            System.out.println("Número " + (i + 1) + ": " + numbers[length - i - 1]);
+        }
+
     }
 }
