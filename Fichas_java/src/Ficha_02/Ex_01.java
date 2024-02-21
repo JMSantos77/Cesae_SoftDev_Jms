@@ -16,8 +16,10 @@ public class Ex_01 {
 
         if (num1 > num2) {
             System.out.println("Maior: " + num1);
-        } else {
+        } else if (num1 < num2) {
             System.out.println("Maior: " + num2);
+        } else {
+            System.out.println("Os n.ºs são iguais!");
         }
     }
 }
