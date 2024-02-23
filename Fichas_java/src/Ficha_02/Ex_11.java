@@ -8,7 +8,7 @@ public class Ex_11 {
 
         double accountBalance, creditOrDebit, finalBalance;
 
-        System.out.println("Inroduza o saldo actual da sua conta:");
+        System.out.println("Introduza o saldo actual da sua conta:");
         accountBalance = input.nextDouble();
 
         System.out.println("introduza quantia a creditar(valor) ou debitar(-valor):");

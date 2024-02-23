@@ -8,6 +8,8 @@ public class Ex_08 {
 
         double nota1, nota2, nota3, pondAverage;
 
+        System.out.println("*** Início programa Avaliação ***");
+
         System.out.println("Introduza o primeiro valor: ");
         nota1 = input.nextDouble();
 
