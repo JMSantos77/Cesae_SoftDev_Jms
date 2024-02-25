@@ -15,7 +15,7 @@ public class Ex_10 {
         System.out.println("introduza outro n.º:");
         num2 = input.nextDouble();
 
-        System.out.println("Escolha o tipo de operação: +, -, *, / .");
+        System.out.println("Escolha o tipo de operação: +, -, *, /");
         operation = input.next();
 
         switch (operation) {
