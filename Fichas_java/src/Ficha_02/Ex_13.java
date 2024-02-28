@@ -18,14 +18,14 @@ public class Ex_13 {
         hours = totalSec / 3600;
         minutes = (totalSec % 3600) / 60;
 
-        if (totalSec > 0 && totalSec < 43200) {
+        if (totalSec > 0 && totalSec < 43200) { //[0h - 11.59h]
             System.out.println("Horas: " + hours + ":" + minutes + "AM");
-        } else if (totalSec >= 43200 && totalSec < 46800) {
+        } else if (totalSec >= 43200 && totalSec < 46800) { //[12h - 12.59h]
             hours = 24 - hours;
             System.out.println("Horas: " + hours + ":" + minutes + "PM");
         } else {
             hours = hours - 12;
-            System.out.println("Horas: " + hours + ":" + minutes + "PM");
+            System.out.println("Horas: " + hours + ":" + minutes + "PM"); //[13h - 23.59h]
         }
     }
 }

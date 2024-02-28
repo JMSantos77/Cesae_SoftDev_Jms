@@ -33,6 +33,8 @@ public class Ex_14 {
          */
 
         //Ordem Inversa
+        System.out.println("\nE por ordem inversa:");
+
         for (int i = 0; i < numbers.length; i++) {
             int length = numbers.length;
             System.out.println("Número " + (i + 1) + ": " + numbers[length - i - 1]);
