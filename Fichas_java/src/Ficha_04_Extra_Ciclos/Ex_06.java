@@ -7,11 +7,12 @@ public class Ex_06 {
         Scanner input = new Scanner(System.in);
 
         int num;
-        int largestNumber = 0;
-        int lowestNumber = 0;
-
         System.out.print("Introduza um número: ");
         num = input.nextInt();
+
+        int largestNumber = num;
+        int lowestNumber = num;
+
 
         while (num != 0) {
 
@@ -21,10 +22,15 @@ public class Ex_06 {
                 lowestNumber = num;
             }
 
-            System.out.print("Introduza outro número: ");
+            System.out.print("Introduza outro número (0 para parar): ");
             num = input.nextInt();
         }
-        System.out.println("O maior número é: " + largestNumber);
-        System.out.println("O menor número é: " + lowestNumber);
+
+        if (largestNumber == lowestNumber) {
+            System.out.println("Só foi introduzido um número! Maior = Menor: " + largestNumber);
+        } else {
+            System.out.println("O maior número é: " + largestNumber);
+            System.out.println("O menor número é: " + lowestNumber);
+        }
     }
 }
