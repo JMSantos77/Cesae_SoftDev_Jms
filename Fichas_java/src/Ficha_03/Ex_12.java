@@ -27,7 +27,7 @@ public class Ex_12 {
             num = input.nextInt();
         }
         System.out.println("\nO resultado dos intervalos é:" +
-                "\n[00,25]: " + sumA +
+                "\n[ 0,25]: " + sumA +
                 "\n[26,50]: " + sumB +
                 "\n[51,75]: " + sumC +
                 "\n[76,100]: " + sumD);

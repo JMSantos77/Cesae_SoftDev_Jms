@@ -20,6 +20,13 @@ public class Ex_06 {
             System.out.println(i);
         }
 
+        //Abordagem com ciclo while
+        /*
+        while(num1 <= num2){
+            System.out.println(num1);
+            num1++;
+        }
+         */
         System.out.println("*** Fim do Programa ***");
     }
 }

@@ -8,12 +8,12 @@ public class Ex_15 {
 
         int num, factorial = 1;
 
-        System.out.println("Introduza um n.º:");
+        System.out.print("Introduza um n.º: ");
         num = input.nextInt();
 
         while (num != 0) {
             factorial *= num;
-            num = num - 1;
+            num --;
         }
         System.out.println("O factorial é: " + factorial);
     }
