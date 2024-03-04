@@ -3,6 +3,8 @@ package Ficha_02;
 import java.util.Scanner;
 
 public class teste {
+
+    //Ex 16) Outra alternativa
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
