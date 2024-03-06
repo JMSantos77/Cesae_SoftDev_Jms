@@ -8,7 +8,7 @@ public class Ex_04 {
         int numbers[] = {45, 5, -11, 87, 9, -3, 95, -12, 23, 10};
         int lowestNumber = numbers[0];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] < lowestNumber) {
                 lowestNumber = numbers[i];
             }

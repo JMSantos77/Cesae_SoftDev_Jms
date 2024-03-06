@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Ex_05 {
     public static void main(String[] args) {
 
-        int averageArray[] = {5, 5, 5, 5, 5, 5, 5, 5, 5, 10};
+        int numbers[] = {5, 5, 5, 5, 5, 5, 5, 5, 5, 10};
         double sum = 0, count = 0;
 
-        for (int i = 0; i < 10; i++) {
-            sum += averageArray[i];
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
             count++;
         }
 

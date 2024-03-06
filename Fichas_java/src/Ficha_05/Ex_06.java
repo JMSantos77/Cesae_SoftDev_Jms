@@ -7,7 +7,7 @@ public class Ex_06 {
         int check = numbers[0];
         boolean ascendingOrder = true;
 
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < numbers.length; i++) {
             if (numbers[i] > check) {
                 check = numbers[i];
             } else {

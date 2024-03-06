@@ -8,7 +8,7 @@ public class Ex_03 {
         int numbers[] = {45, 5, -11, 87, 9, 99, 95, -3, 23, 10};
         int highestNumber = numbers[0];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] > highestNumber) {
                 highestNumber = numbers[i];
             }
