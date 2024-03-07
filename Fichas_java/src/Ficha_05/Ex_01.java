@@ -9,7 +9,7 @@ public class Ex_01 {
         int numeros[] = new int[10], insert;
 
         for (int i = 0; i < 10; i++) {
-            System.out.print("Insira um número no array: ");
+            System.out.print("Insira um número no array[" + i + "]: ");
             insert = input.nextInt();
             numeros[i] = insert;
         }
