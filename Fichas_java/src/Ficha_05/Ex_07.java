@@ -35,6 +35,5 @@ public class Ex_07 {
         } else {
             System.out.println("\n" + onlyOddNumbers);
         }
-
     }
 }

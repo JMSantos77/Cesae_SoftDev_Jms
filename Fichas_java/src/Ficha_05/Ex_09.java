@@ -15,6 +15,7 @@ public class Ex_09 {
                 matrixElementsSum += matrix[i][j];
             }
         }
+
         System.out.println("\nO valor da soma de todos os elementos da matriz é: " + matrixElementsSum);
     }
 }
