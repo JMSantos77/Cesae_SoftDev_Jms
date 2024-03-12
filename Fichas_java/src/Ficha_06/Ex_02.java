@@ -3,6 +3,8 @@ package Ficha_06;
 import java.util.Scanner;
 
 public class Ex_02 {
+
+    //Pedir um número
     public static int askNumber() {
         Scanner input = new Scanner(System.in);
         int number;
@@ -16,14 +18,12 @@ public class Ex_02 {
         return number;
     }
 
-    public static String printChar(int charNumber) {
-
-        String printChar = "";
+    //Imprimir um asterisco o número de vezes desejadas
+    public static void printChar(int charNumber) {
 
         for (int i = 0; i < charNumber; i++) {
             System.out.print("*");
         }
-        return printChar;
     }
 
     public static void main(String[] args) {

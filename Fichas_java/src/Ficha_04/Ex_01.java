@@ -36,7 +36,6 @@ public class Ex_01 {
                 case "/":
                     result = num1 / num2;
                     System.out.println("O resultado é: " + result);
-
                     break;
             }
 
