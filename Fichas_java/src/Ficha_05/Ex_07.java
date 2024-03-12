@@ -7,33 +7,36 @@ public class Ex_07 {
         Scanner input = new Scanner(System.in);
 
         int numbers[] = new int[10], insert;
-        //int evenNumbers[] = new int [];
-        int highestEven = -1;
-        String onlyOddNumbers = "Não existem números pares";
+        numbers = new int[]{1, 3, 5, 3, 7, 11, 13, 11, 17, 19};
 
+        //Inserir numeros no array.
+        /*
         for (int i = 0; i < 10; i++) {
             System.out.print("Insira um número no array: ");
             insert = input.nextInt();
             numbers[i] = insert;
         }
-
-        for (int i = 0; i < 10; i++) {
-            if (numbers[i] % 2 == 0 && numbers[i] > highestEven) {
-                highestEven = numbers[i];
-            }
-        }
-        /*
-        if (insert % 2 == 0 && insert > highestEven) {
-            evenNumbers[i] = insert;
-            highestEven = insert;
-        }
-
          */
 
-        if (highestEven % 2 == 0 && highestEven != 0) {
-            System.out.println("\nO maior número par do array é: " + highestEven);
+        int highestEven = -1;
+
+        for (int i : numbers) {
+            if (i % 2 == 0) {
+                highestEven = i;
+                break;
+            }
+        }
+        //System.out.println("maior par achado: " + highestEven);
+
+        if (highestEven == -1) {
+            System.out.println("Não existem números pares.");
         } else {
-            System.out.println("\n" + onlyOddNumbers);
+            for (int i = 0; i < 10; i++) {
+                if (numbers[i] % 2 == 0 && numbers[i] > highestEven) {
+                    highestEven = numbers[i];
+                }
+            }
+            System.out.println("\nO maior número par do array é: " + highestEven);
         }
     }
 }
