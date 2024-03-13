@@ -7,11 +7,27 @@ public class Ex_10 {
         Scanner input = new Scanner(System.in);
 
         int[] numbers = {11, 12, 11, 13, 14, 15, 16, 13, 17, 18, 14, 19};
-        int[] sortedNumbers = new int[12];
-        int count = 0;
+        int count = 0, newArraySize = 0;
 
-        for (int i = 0, k=0; i < numbers.length; i++) {
-            for (int j = 0+i; j < numbers.length; j++) {
+        //Acha o tamanho do novo array.
+        for (int i = 0, k = 0; i < numbers.length; i++) {
+            for (int j = i; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j]) {
+                    count++;
+                }
+            }
+            if (count == 1) {
+                newArraySize++;
+            }
+            count = 0;
+        }
+
+        //Instancia um array com o tamanho correto.
+        int[] sortedNumbers = new int[newArraySize];
+
+        //Envia os não duplicados para o novo array.
+        for (int i = 0, k = 0; i < numbers.length; i++) {
+            for (int j = 0 + i; j < numbers.length; j++) {
                 if (numbers[i] == numbers[j]) {
                     count++;
                 }
@@ -22,8 +38,9 @@ public class Ex_10 {
             count = 0;
         }
 
-        for (int i = 0; i < sortedNumbers.length; i++) {
-            System.out.print(sortedNumbers[i] + " | ");
+        //Imprime o novo array.
+        for (int i : sortedNumbers) {
+            System.out.print(i + " | ");
         }
     }
 }
