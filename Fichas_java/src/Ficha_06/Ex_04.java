@@ -15,13 +15,14 @@ public class Ex_04 {
         int number = input.nextInt();
 
         do {
-            System.out.print("\nEscolha uma Operação ou '7' para sair:\n" +
+            System.out.print("\nEscolha uma Operação:\n" +
                     "1. Par ou Ímpar\n" +
                     "2. Positivo ou Negativo\n" +
                     "3. Primo ou Não Primo\n" +
                     "4. Perfeito ou Não Perfeito\n" +
                     "5. Triangular ou Não Triangular\n" +
                     "6. Trocar de Número\n" +
+                    "7. Sair\n" +
                     "Opção: ");
 
             operation = input.nextInt();
@@ -66,8 +67,11 @@ public class Ex_04 {
                     System.out.print("\nIntroduza um novo número para analisar: ");
                     number = input.nextInt();
                     break;
+                case 7:
+                    System.out.println("\nAté à próxima!");
+                    break;
                 default:
-                    System.out.println("\nOpção inválida!\n");
+                    System.out.println("\nOpção inválida!");
                     break;
             }
 

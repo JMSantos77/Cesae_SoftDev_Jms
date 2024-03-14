@@ -10,7 +10,7 @@ public class Ex_10 {
         int count = 0, newArraySize = 0;
 
         //Acha o tamanho do novo array.
-        for (int i = 0, k = 0; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             for (int j = i; j < numbers.length; j++) {
                 if (numbers[i] == numbers[j]) {
                     count++;
