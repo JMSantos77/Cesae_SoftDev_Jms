@@ -15,6 +15,7 @@ public class Ex_10 {
                 if (numbers[i] == numbers[j]) {
                     count++;
                 }
+                //System.out.println("i=" + numbers[i] + " | j=" + numbers[j] + " count:" + count);
             }
             if (count == 1) {
                 newArraySize++;
