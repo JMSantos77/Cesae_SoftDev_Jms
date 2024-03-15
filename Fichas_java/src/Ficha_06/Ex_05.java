@@ -2,7 +2,7 @@ package Ficha_06;
 
 public class Ex_05 {
     // Recebe um array de inteiros como parâmetro e retorna o maior valor do array.
-    static int highestVectorElement(int[] vector) {
+    public static int highestVectorElement(int[] vector) {
         int highestElement = vector[0];
 
         for (int i : vector) {
@@ -14,7 +14,7 @@ public class Ex_05 {
     }
 
     // Recebe um array de inteiros como parâmetro e retorna o menor valor do array.
-    static int lowestVectorElement(int[] vector) {
+    public static int lowestVectorElement(int[] vector) {
         int lowestElement = vector[0];
 
         for (int i : vector) {
@@ -26,35 +26,32 @@ public class Ex_05 {
     }
 
     // Recebe um array de inteiros como parâmetro e retorna se o array está crescente.
-    static boolean isCrescent(int[] vector) {
-        int previousElement = vector[0];
+    public static boolean isCrescent(int[] vector) {
+
         boolean isCrescent = true;
 
         for (int i = 1; i < vector.length; i++) {
-            if (vector[i] > previousElement) {
-                previousElement = vector[i];
-            } else {
+            if (vector[i] < vector[i - 1]) {
                 isCrescent = false;
                 break;
             }
         }
 
+        return isCrescent;
         /*
         // Sem criar uma var booleana extra
         for (int i = 1; i < vector.length; i++) {
-        if (vector[i] <= previousElement) {
-            return false;
+            if (vector[i] < vector[i - 1]) {
+                return false;
+            } else {
+                return true;
+            }
         }
-        previousElement = vector[i];
-    }
-    return true;
          */
-        return isCrescent;
     }
 
     public static void main(String[] args) {
-        int[] vetor = {2, 3, 4, 9, 10};
-        boolean maior = isCrescent(vetor);
-        System.out.println(maior);
+
     }
 }
+

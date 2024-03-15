@@ -2,6 +2,8 @@ package Ficha_06;
 
 import java.util.Scanner;
 
+import static Ficha_06.Ex_05.*;
+
 /**
  * Programa Análise de um Vector.
  */
@@ -33,13 +35,13 @@ public class Ex_06 {
 
             switch (opcao) {
                 case 7:
-                    System.out.println("\n> O maior elemento é: " + Ex_05.highestVectorElement(vector));
+                    System.out.println("\n> O maior elemento é: " + highestVectorElement(vector));
                     break;
                 case 8:
-                    System.out.println("\n> O menor elemento é: " + Ex_05.lowestVectorElement(vector));
+                    System.out.println("\n> O menor elemento é: " + lowestVectorElement(vector));
                     break;
                 case 9:
-                    System.out.println("\n> Os elementos são crescentes?: " + Ex_05.isCrescent(vector));
+                    System.out.println("\n> Os elementos são crescentes?: " + isCrescent(vector));
                     break;
                 case 10:
                     System.out.println("\nAté à próxima!");

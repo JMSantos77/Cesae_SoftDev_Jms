@@ -6,7 +6,7 @@ package Ficha_06;
  */
 public class Ex_08 {
     //Soma de duas matrizes.
-    static void sumMatrices(int[][] matrixA, int[][] matrixB) {
+    public static void sumMatrices(int[][] matrixA, int[][] matrixB) {
 
         int[][] sumMatrices = new int[3][3];
 
@@ -24,7 +24,7 @@ public class Ex_08 {
         }
     }
     //Somatório dos elementos das matrizes.
-    static int matrixElementsSum(int[][] matrixA,int[][] matrixB ) {
+    public static int matrixElementsSum(int[][] matrixA,int[][] matrixB ) {
 
         int matrixElmentsSum = 0;
 

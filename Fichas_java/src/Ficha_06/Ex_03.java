@@ -1,20 +1,18 @@
 package Ficha_06;
 
-import java.util.Scanner;
-
 public class Ex_03 {
     //a) isEven
-    static boolean isEven(int number) {
+    public static boolean isEven(int number) {
         return number % 2 == 0;
     }
 
     //b)  isPositive
-    static boolean isPositive(int number) {
+    public static boolean isPositive(int number) {
         return number > 0;
     }
 
     //c) isPrime
-    static boolean isPrime(int number) {
+    public static boolean isPrime(int number) {
 
         boolean primo = true;
 
@@ -29,7 +27,8 @@ public class Ex_03 {
     }
 
     //d) isPerfect
-    static boolean isPerfect(int number) {
+    public static boolean isPerfect(int number) {
+
         int sum = 0;
 
         for (int i = 1; i < number; i++) {
@@ -42,7 +41,7 @@ public class Ex_03 {
     }
 
     //e) isTriangular
-    static boolean isTriangular(int number) {
+    public static boolean isTriangular(int number) {
 
         int sum = 0;
 
@@ -54,10 +53,5 @@ public class Ex_03 {
         }
 
         return number == sum;
-    }
-
-
-    public static void main(String[] args) {
-
     }
 }
