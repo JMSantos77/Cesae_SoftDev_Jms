@@ -9,7 +9,7 @@ public class Ex_Slide {
     public static void usingPrintWriter() throws FileNotFoundException {
         String fileContent = "Hello! Adoro programar em Java!";
 
-        File file = new File("C:/Users/jmcps/Cesae_SoftDev/Cesae_SoftDev_Jms/Fichas_java/src/Ficha_07/fileToWrite.txt");
+        File file = new File("Fichas_java/Files_Ficha_07/fileToWrite.txt");
         PrintWriter printWriter = new PrintWriter(file);
 
         printWriter.println(fileContent);
@@ -17,8 +17,23 @@ public class Ex_Slide {
 
         printWriter.close();
     }
+
     public static void main(String[] args) throws FileNotFoundException {
 
         usingPrintWriter();
+
+/*
+    // Exemplo do pdf 20 slide String.split( )
+        String linha = "1 frutas laranja 1.5 1.3";
+
+        String[] items = linha.split(" ");
+        //Tem de ter um espaço "_" para ele separar cada palavra qd encontra um espaço,
+        // senão separa cada char numa posição do array.
+
+        for (String i : items) {
+            System.out.print(i + " | ");
+        }
+
+ */
     }
 }
