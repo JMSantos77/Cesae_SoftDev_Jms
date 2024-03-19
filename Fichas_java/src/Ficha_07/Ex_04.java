@@ -4,6 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Escreva um programa que leia um ficheiro CSV (Comma-Separated Values) e imprima o conteúdo na
+ * consola.
+ */
+
 public class Ex_04 {
     public static void readCsvFileAndPrint(String path) throws FileNotFoundException {
 

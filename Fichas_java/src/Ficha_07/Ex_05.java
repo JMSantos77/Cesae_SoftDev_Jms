@@ -4,6 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Escreva um programa que leia um ficheiro de texto contendo números inteiros separados por espaço e
+ * calcule a soma desses números.
+ */
+
 public class Ex_05 {
     public static void readFileAndSum(String path) throws FileNotFoundException {
 
@@ -21,7 +26,7 @@ public class Ex_05 {
     public static void main(String[] args) {
 
         try {
-            readFileAndSum("Fichas_java/Files_Ficha_07/exercicio_05_31.txt");
+            readFileAndSum("Cesae_SoftDev_Jms/Fichas_java/Files_Ficha_07/exercicio_05_31.txt");
 
         } catch (FileNotFoundException e) {
             System.out.println("Ficheiro de texto não encontrado...");

@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+/**
+ * Escreva um programa que leia o conteúdo de um ficheiro de texto e grave-o num outro ficheiro.
+ */
 public class Ex_03 {
     public static void readFileAndSave(String path) throws FileNotFoundException {
 

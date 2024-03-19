@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+/**
+ * Escreva um programa que crie um ficheiro de texto e escreva nele uma mensagem.
+ */
+
 public class Ex_02 {
     public static void createFileAndWriteMessage(String path, String message) throws FileNotFoundException {
 

@@ -21,7 +21,7 @@ Angelina Jolie,47
 Vasco da Gama,55
 Jose Castelo Branco,59
 Batatinha,55
-Companhia,53 
+Companhia,53
 Eusebio,71
 Lili Caneças,78
 Luis de Camoes,56

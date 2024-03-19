@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Escreva um programa que leia o conteúdo de um ficheiro de texto e imprima na consola.
+ */
+
 public class Ex_01 {
     public static void readFileAndPrint(String path) throws FileNotFoundException {
 
