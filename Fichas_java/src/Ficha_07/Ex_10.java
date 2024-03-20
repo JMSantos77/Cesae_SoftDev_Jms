@@ -38,27 +38,26 @@ public class Ex_10 {
             line++;
             column = 0;
         }
-        /* //Para imprimir a matriz.
+        /*//Para imprimir a matriz.
         for (int i = 0; i < dataMatrix.length; i++) {
             for (int j = 0; j < dataMatrix[i].length; j++) {
                 System.out.print(dataMatrix[i][j] + " | ");
             }
             System.out.println();
-        }
-
-        */
+        }*/
         return dataMatrix;
     }
 
     public static void searchMenu() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         String path = "Fichas_java/Files_Ficha_07/exercicio_10.csv";
+        String pathTeste = "Fichas_java/Files_Ficha_07/testeEx_10.csv";
 
         int option;
 
         do {
-            System.out.print("\n**** MENU PESQUISAS ****\n" +
-                    "     -- Opções --\n" +
+            System.out.print("\n******** MENU PESQUISAS ********\n" +
+                    "         -- Opções --\n" +
                     "1. Imprimir todos os Formandos.\n" +
                     "2. Pesquisar aluno por Matrícula.\n" +
                     "3. Lista de alunos por Curso.\n" +
@@ -72,22 +71,25 @@ public class Ex_10 {
 
             switch (option) {
                 case 1:
-                    printAllStudents(readFileToMatrix(path));
+                    printAllStudents(readFileToMatrix(pathTeste));
                     break;
                 case 2:
-                    printStudentByRegistration(readFileToMatrix(path));
+                    printStudentByRegistration(readFileToMatrix(pathTeste));
                     break;
                 case 3:
-                    printStudentsByCourse(readFileToMatrix(path));
+                    printStudentsByCourse(readFileToMatrix(pathTeste));
                     break;
                 case 4:
-                    getOldestStudent(readFileToMatrix(path));
+                    getOldestStudent(readFileToMatrix(pathTeste));
                     break;
                 case 5:
-                    getStudentsWithMoreEnr(readFileToMatrix(path));
+                    getStudentsWithMoreEnr(readFileToMatrix(pathTeste));
                     break;
                 case 6:
-                    totalNumberOfStudents(readFileToMatrix(path));
+                    totalNumberOfStudents(readFileToMatrix(pathTeste));
+                    break;
+                case 7:
+                    System.out.println();
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -139,7 +141,7 @@ public class Ex_10 {
         System.out.print("\nPesquisa por Curso\n" +
                 "Insira Curso: ");
         course = input.nextLine();
-
+        System.out.print("***************************************************");
         System.out.println("\nLista de alunos neste curso:");
         for (String[] strings : matrix) {
             if (Objects.equals(strings[2], course)) {
@@ -148,8 +150,8 @@ public class Ex_10 {
                 System.out.println();
             }
         }
-        System.out.println("\nTotal de alunos inscritos em " + course + ": " + studentsCount);
-        System.out.println();
+        System.out.println("\nTotal de alunos em " + course + ": " + studentsCount);
+        System.out.println("***************************************************");
     }
 
     public static void getOldestStudent(String[][] matrix) {
@@ -162,7 +164,10 @@ public class Ex_10 {
                 oldestStudent = matrix[i][0];
             }
         }
-        System.out.println("\nO aluno mais velho é: " + oldestStudent + " com " + oldestStudentAge + " anos.");
+        System.out.println("\n****************************************************" +
+                "\n O aluno mais velho é " + oldestStudent + " com " + oldestStudentAge + " anos." +
+                "\n****************************************************");
+
     }
 
     public static void getStudentsWithMoreEnr(String[][] matrix) {
@@ -175,7 +180,7 @@ public class Ex_10 {
                     count++;
                 }
             }
-            if (count == 1 && count < 2) {
+            if (count == 1) {
                 System.out.print(matrix[i][0] + " | ");
             }
             count = 0;
@@ -192,20 +197,20 @@ public class Ex_10 {
         PrintWriter printWriter = new PrintWriter(path);
 
 
-
         int newSize = matrix.length + 1;
         int lastIndex = newSize - 1;
 
-        String [][] updatedMatrix = new String[newSize][matrix[0].length]; //Inicia nova matriz com +1 linha e número de colunas = antiga.
+        String[][] updatedMatrix = new String[newSize][matrix[0].length]; //Inicia nova matriz com +1 linha e número de colunas = antiga.
 
         //Passo os dados da matriz antiga para a nova que tem mais uma linha.
-        for (int i=0; i< matrix.length; i++){
-            for (int j=0; j< matrix[i].length; j++){
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 updatedMatrix[i][j] = matrix[i][j];
             }
         }
 
-        System.out.print("Insira o nome do Formando: ");
+        //Começa a inserir a nova linha
+        System.out.print("\nInsira o nome do Formando: ");
         updatedMatrix[lastIndex][0] = input.nextLine();
 
         System.out.print("Insira o número do Formando: ");
@@ -220,27 +225,49 @@ public class Ex_10 {
         System.out.print("Insira a idade do Formando: ");
         updatedMatrix[lastIndex][4] = input.nextLine();
 
-        for (String[] strings: updatedMatrix){
-            String line = Arrays.toString(strings);
+        System.out.println("  * Inserção concluída *\n");
+
+
+        //Imprime a matriz devolta para o csv para atualizar.
+        //1 - Volta a colocar o cabeçalho no csv senão vai dar problema.
+        String header = "nome,numero,curso,email,idade";
+        printWriter.println(header);
+
+        //2 - Passa o resto das linhas para o csv.
+        for (String[] strings : updatedMatrix) {
+            String line = String.join(",", strings);
+            //String line = Arrays.toString(strings);
             printWriter.println(line);
-            //System.out.println(line);
         }
         printWriter.close();
 
-/*
-        //Imprimir matriz para confirmar
-        for (int i = 0; i < updatedMatrix.length; i++) {
-            for (int j = 0; j < updatedMatrix[i].length; j++) {
-                System.out.print(updatedMatrix[i][j] + " | ");
-            }
-            System.out.println();
-        }
-
- */
-
-
-
         return updatedMatrix;
+    }
+
+    public static void editStudentData(String[][] matrix) {
+        Scanner input = new Scanner(System.in);
+
+        String studentNumber;
+
+        System.out.print("Insira n.º de matrícula do aluno alterar: ");
+        studentNumber = input.next();
+
+        for (String[] strings: matrix){
+            if (Objects.equals(strings[1], studentNumber)){
+                System.out.print("Altere Nome: ");
+                strings[0]= input.next();
+
+                System.out.print("Altere Curso: ");
+                strings[2]= input.next();
+
+                System.out.print("Altere E-mail: ");
+                strings[3]= input.next();
+
+                System.out.print("Altere Idade: ");
+                strings[4]= input.next();
+            }
+        }
+        System.out.println("* Fim de Edição *");
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -250,10 +277,10 @@ public class Ex_10 {
 
         int option;
 
-        System.out.println("\n*** BEM VINDO AO PROGRAMA 'GESTÃO DE ALUNOS' ***");
+        System.out.println("\n*** BEM VINDO AO PROGRAMA 'GESTÃO DE ALUNOS' ***\n");
 
         do {
-            System.out.print("\n**** MENU INICIAL ****\n" +
+            System.out.print("**** MENU INICIAL ****\n" +
                     "     -- Opções --\n" +
                     "1. Pesquisas\n" +
                     "2. Criar Formando\n" +
@@ -269,10 +296,10 @@ public class Ex_10 {
 
                     break;
                 case 2:
-                    addNewStudent(readFileToMatrix(path), pathTeste);
+                    addNewStudent(readFileToMatrix(pathTeste), pathTeste);
                     break;
                 case 3:
-
+                    editStudentData(readFileToMatrix(pathTeste));
                     break;
                 case 4:
 
