@@ -29,7 +29,7 @@ public class Ex_07 {
     public static void main(String[] args) {
 
         try {
-            printNumberOfLinesAndWords("Cesae_SoftDev_Jms/Fichas_java/Files_Ficha_07/exercicio_07.txt");
+            printNumberOfLinesAndWords("Fichas_java/Files_Ficha_07/exercicio_07.txt");
 
         } catch (FileNotFoundException e) {
             System.out.println("Ficheiro de texto não encontrado...");

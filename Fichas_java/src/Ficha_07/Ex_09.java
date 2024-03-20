@@ -14,7 +14,6 @@ public class Ex_09 {
         int numberLines = 0, numberColumns = 0;
 
         String line = readFile.nextLine(); // Lê o cabeçalho 1º, para que não conte a seguir
-        //String [][] musicListMatrix = null;
 
         // Descobrir n.º de linhas e colunas da matriz.
         while (readFile.hasNextLine()) {
@@ -117,15 +116,16 @@ public class Ex_09 {
         int newArraySize = 0;
         String artistName;
 
+        // Passa todos os artistas para um vector para poder ver os repetidos
         String[] artistsVector = new String[46];
         for (String[] strings : matrix) {
             artistsVector[count] = strings[1];
             count++;
         }
 
-        //Acha o tamanho do novo array.
+        //Acha o tamanho do array para enviar os não duplicados.
         for (int i = 0; i < artistsVector.length; i++) {
-            for (int j = 0 + i; j < artistsVector.length; j++) {
+            for (int j = i; j < artistsVector.length; j++) {
                 if (Objects.equals(artistsVector[i], artistsVector[j])) {
                     count++;
                 }
@@ -150,6 +150,8 @@ public class Ex_09 {
             }
             count = 0;
         }
+
+        //Mostra os artistas disponíveis para selecção.
         System.out.println("\nEstes são os artistas em arquivo:");
         int count1 = 0;
         for (String artist : sortedArtists) {
@@ -172,7 +174,6 @@ public class Ex_09 {
                 count = 0;
             }
         }
-
  */
 
         System.out.print("\nEscolha um artista para ver as músicas: ");
@@ -246,7 +247,6 @@ public class Ex_09 {
         System.out.println("\n*** BEM VINDO AO PROGRAMA 'LISTA DE MÚSICAS' ***");
 
         do {
-
             System.out.print("\nInsira uma opção:\n" +
                     "1. Pesquisar músicas por género.\n" +
                     "2. Pesquisar músicas por artista.\n" +

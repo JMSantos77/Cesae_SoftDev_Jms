@@ -28,7 +28,7 @@ public class Ex_08 {
 
     public static void main(String[] args) {
         try {
-            totalSalesValue("Cesae_SoftDev_Jms/Fichas_java/Files_Ficha_07/exercicio_08.csv");
+            totalSalesValue("Fichas_java/Files_Ficha_07/exercicio_08.csv");
 
         } catch (FileNotFoundException e) {
             System.out.println("Ficheiro de texto não encontrado...");
