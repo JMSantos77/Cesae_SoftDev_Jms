@@ -228,12 +228,12 @@ public class Ex_10 {
         System.out.println("  * Inserção concluída *\n");
 
 
-        //Imprime a matriz devolta para o csv para atualizar.
-        //1 - Volta a colocar o cabeçalho no csv senão vai dar problema.
+        //Imprime a matriz de volta para o csv para atualizar.
+        //Volta a colocar o cabeçalho no csv senão vai dar problema.
         String header = "nome,numero,curso,email,idade";
         printWriter.println(header);
 
-        //2 - Passa o resto das linhas para o csv.
+        //A seguir passa o resto das linhas para o csv.
         for (String[] strings : updatedMatrix) {
             String line = String.join(",", strings);
             //String line = Arrays.toString(strings);
@@ -244,8 +244,9 @@ public class Ex_10 {
         return updatedMatrix;
     }
 
-    public static void editStudentData(String[][] matrix) {
+    public static void editStudentData(String[][] matrix, String path) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
+        PrintWriter printWriter = new PrintWriter(new File(path));
 
         String studentNumber;
 
@@ -268,6 +269,18 @@ public class Ex_10 {
             }
         }
         System.out.println("* Fim de Edição *");
+
+        //Imprime a matriz de volta para o csv para atualizar.
+        //Volta a colocar o cabeçalho no csv senão vai dar problema.
+        String header = "nome,numero,curso,email,idade";
+        printWriter.println(header);
+
+        //A seguir passa o resto das linhas para o csv.
+        for (String[] strings : matrix) {
+            String line = String.join(",", strings);
+            printWriter.println(line);
+        }
+        printWriter.close();
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -299,7 +312,7 @@ public class Ex_10 {
                     addNewStudent(readFileToMatrix(pathTeste), pathTeste);
                     break;
                 case 3:
-                    editStudentData(readFileToMatrix(pathTeste));
+                    editStudentData(readFileToMatrix(pathTeste), pathTeste);
                     break;
                 case 4:
 
