@@ -250,22 +250,22 @@ public class Ex_10 {
 
         String studentNumber;
 
-        System.out.print("Insira n.º de matrícula do aluno alterar: ");
+        System.out.print("Insira n.º de matrícula do aluno a alterar: ");
         studentNumber = input.next();
 
-        for (String[] strings: matrix){
-            if (Objects.equals(strings[1], studentNumber)){
+        for (String[] strings : matrix) {
+            if (Objects.equals(strings[1], studentNumber)) {
                 System.out.print("Altere Nome: ");
-                strings[0]= input.next();
+                strings[0] = input.next();
 
                 System.out.print("Altere Curso: ");
-                strings[2]= input.next();
+                strings[2] = input.next();
 
                 System.out.print("Altere E-mail: ");
-                strings[3]= input.next();
+                strings[3] = input.next();
 
                 System.out.print("Altere Idade: ");
-                strings[4]= input.next();
+                strings[4] = input.next();
             }
         }
         System.out.println("* Fim de Edição *");
@@ -281,6 +281,51 @@ public class Ex_10 {
             printWriter.println(line);
         }
         printWriter.close();
+    }
+
+    public static void deleteStudentData(String[][] matrix, String path) throws FileNotFoundException {
+        Scanner input = new Scanner(System.in);
+        PrintWriter printWriter = new PrintWriter(new File(path));
+
+        String studentNumber;
+
+        System.out.print("Insira n.º de matrícula do aluno a apagar: ");
+        studentNumber = input.next();
+
+        for (String[] strings : matrix) {
+            if (Objects.equals((strings[1]), studentNumber)) {
+                strings[0] = "";
+                strings[1] = "";
+                strings[2] = "";
+                strings[3] = "";
+                strings[4] = "";
+            }
+        }
+        System.out.println("* Operação Concluída *");
+
+        //Imprime a matriz de volta para o csv para atualizar.
+        //Volta a colocar o cabeçalho no csv senão vai dar problema.
+        String header = "nome,numero,curso,email,idade";
+        printWriter.println(header);
+
+        //A seguir passa o resto das linhas para o csv.
+        for (String[] strings : matrix) {
+            String line = String.join(",", strings);
+            printWriter.println(line);
+        }
+        printWriter.close();
+
+        /*
+        //Comsigo apagar a linha mas preciso resolver strings[0]
+         for (String[] strings : matrix) {
+            String line = String.join(",", strings);
+            if (strings[0] == ""){
+                line = "";
+            }
+                printWriter.println(line);
+        }
+        printWriter.close();
+        */
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -315,7 +360,7 @@ public class Ex_10 {
                     editStudentData(readFileToMatrix(pathTeste), pathTeste);
                     break;
                 case 4:
-
+                    deleteStudentData(readFileToMatrix(pathTeste), pathTeste);
                     break;
                 case 5:
                     System.out.println("\nAté à próxima! :-)");
