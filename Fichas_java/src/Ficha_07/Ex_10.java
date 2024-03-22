@@ -303,23 +303,54 @@ public class Ex_10 {
         }
         System.out.println("* Operação Concluída *");
 
-        //Imprime a matriz de volta para o csv para atualizar.
+        //Imprime a matriz de volta para o csv para o atualizar.
         //Volta a colocar o cabeçalho no csv senão vai dar problema.
         String header = "nome,numero,curso,email,idade";
         printWriter.println(header);
 
-        //A seguir passa o resto das linhas para o csv.
+        //A seguir passa o resto das linhas para o csv, excluindo a que tem espaços.
+        for (String[] linhas : matrix) {
+            boolean isEmpty = false;
+            for (String elemento : linhas) {
+                if (elemento.isEmpty()) {
+                    isEmpty = true;
+                    break;
+                }
+            }
+            if (!isEmpty) {
+                String line = String.join(",", linhas);
+                printWriter.println(line);
+            }
+        }
+        printWriter.close();
+        /*
+        //esta versão, parecida comanterior não funciona, imprime as virgulas na mesma.
+        for (String[] linhas : matrix) {
+            for (String elemento : linhas) {
+                if (elemento.isEmpty()) {
+                    break;
+                }
+            }
+            String line = String.join(",", linhas);
+            printWriter.println(line);
+        }
+        printWriter.close();
+
+         */
+        /*
+        //Passa o resto das linhas para o csv, mas a linha em branco com as virgulas.
         for (String[] strings : matrix) {
             String line = String.join(",", strings);
             printWriter.println(line);
         }
         printWriter.close();
-
+        */
         /*
-        //Comsigo apagar a linha mas preciso resolver strings[0]
+        //Consigo meter a linha toda com espaços, mas preciso resolver strings[0] que não será elegante.
+        //Ideal seria analisar tudo(ver versão acima de tudo)
          for (String[] strings : matrix) {
             String line = String.join(",", strings);
-            if (strings[0] == ""){
+            if (Objects.equals(strings[0], "")){
                 line = "";
             }
                 printWriter.println(line);

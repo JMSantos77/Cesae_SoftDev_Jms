@@ -15,8 +15,8 @@ public class printWriter {
     /**
      * Apaga uma linha passada por parâmetro,
      * passa para um ficheiro temporário e reescreve o original.
-     * @param lineToDelete
-     * @throws FileNotFoundException
+     * @param lineToDelete Passa uma string como param para apagar.
+     * @throws FileNotFoundException Lança erro caso não ache Ficheiro
      */
     public static void deleteLineInFile(String lineToDelete) throws FileNotFoundException {
         String inputPath = "Fichas_java/Files_Ficha_07/printwriterTeste.csv";
@@ -93,10 +93,11 @@ public class printWriter {
      */
     public static void countLines() throws FileNotFoundException {
 
-        int count = 0;
         String inputPath = "Fichas_java/Files_Ficha_07/printwriterTeste.csv";
         File inputFile = new File(inputPath);
         Scanner readFile = new Scanner(inputFile);
+
+        int count = 0;
 
         while (readFile.hasNextLine()) {
             String line = readFile.nextLine();
