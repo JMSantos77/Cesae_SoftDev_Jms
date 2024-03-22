@@ -56,8 +56,8 @@ public class Ex_10 {
         int option;
 
         do {
-            System.out.print("\n******** MENU PESQUISAS ********\n" +
-                    "         -- Opções --\n" +
+            System.out.print("\n********* MENU PESQUISAS *********\n" +
+                    "           -- Opções --\n" +
                     "1. Imprimir todos os Formandos.\n" +
                     "2. Pesquisar aluno por Matrícula.\n" +
                     "3. Lista de alunos por Curso.\n" +
@@ -250,7 +250,7 @@ public class Ex_10 {
 
         String studentNumber;
 
-        System.out.print("Insira n.º de matrícula do aluno a alterar: ");
+        System.out.print("\nInsira n.º de matrícula do aluno a alterar: ");
         studentNumber = input.next();
 
         for (String[] strings : matrix) {
@@ -268,7 +268,7 @@ public class Ex_10 {
                 strings[4] = input.next();
             }
         }
-        System.out.println("* Fim de Edição *");
+        System.out.println("* Fim de Edição *\n");
 
         //Imprime a matriz de volta para o csv para atualizar.
         //Volta a colocar o cabeçalho no csv senão vai dar problema.
