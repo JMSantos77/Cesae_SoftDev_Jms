@@ -38,13 +38,13 @@ public class Ex_10 {
             line++;
             column = 0;
         }
-        /*//Para imprimir a matriz.
+        //Para imprimir a matriz.
         for (int i = 0; i < dataMatrix.length; i++) {
             for (int j = 0; j < dataMatrix[i].length; j++) {
                 System.out.print(dataMatrix[i][j] + " | ");
             }
             System.out.println();
-        }*/
+        }
         return dataMatrix;
     }
 
@@ -180,7 +180,7 @@ public class Ex_10 {
                     count++;
                 }
             }
-            if (count == 1) {
+            if (count == 1) { // ==1 para que não se repita, só conta a ultima ocorrência, o que quer dizer que tinha mais de uma.
                 System.out.print(matrix[i][0] + " | ");
             }
             count = 0;
