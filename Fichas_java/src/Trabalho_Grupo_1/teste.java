@@ -1,5 +1,7 @@
 package Trabalho_Grupo_1;
 
+import org.w3c.dom.ls.LSOutput;
+
 /**
  * Exemplo de Criar uma excepção com "try...catch".
  */
@@ -20,5 +22,10 @@ public class teste {
                 System.out.println("Excep 2: Não foi encontrado o elemento correspondente!");
             }
         }
+        String moneyBag = "\uD83D\uDCB0";
+        System.out.println(moneyBag);
+
     }
+
+
 }
