@@ -58,14 +58,14 @@ public class Ex_10 {
         do {
             System.out.print("\n********* MENU PESQUISAS *********\n" +
                     "           -- Opções --\n" +
-                    "1. Imprimir todos os Formandos.\n" +
-                    "2. Pesquisar aluno por Matrícula.\n" +
-                    "3. Lista de alunos por Curso.\n" +
-                    "4. Aluno mais velho.\n" +
-                    "5. Alunos em mais de um Curso\n" +
-                    "6. Total de Formandos.\n" +
-                    "7. Menu anterior\n" +
-                    "Opção: ");
+                    "1. Imprimir todos os Formandos \uD83D\uDCC4\n" +
+                    "2. Pesquisar aluno por Matrícula \uD83D\uDD0E\n" +
+                    "3. Lista de alunos por Curso \uD83D\uDCC4\n" +
+                    "4. Aluno mais velho \uD83D\uDC64\n" +
+                    "5. Alunos em mais de um Curso \uD83D\uDCCA\n" +
+                    "6. Total de Formandos \uD83D\uDCC1\n" +
+                    "7. Menu anterior \u21A9\n" +
+                    "Opção \uD83D\uDCBB: ");
 
             option = input.nextInt();
 
@@ -141,6 +141,7 @@ public class Ex_10 {
         System.out.print("\nPesquisa por Curso\n" +
                 "Insira Curso: ");
         course = input.nextLine();
+
         System.out.print("***************************************************");
         System.out.println("\nLista de alunos neste curso:");
         for (String[] strings : matrix) {
@@ -292,6 +293,7 @@ public class Ex_10 {
         System.out.print("Insira n.º de matrícula do aluno a apagar: ");
         studentNumber = input.next();
 
+        //Passa todas as colunas da linha onde achar o studentNumber passado para " ".
         for (String[] strings : matrix) {
             if (Objects.equals((strings[1]), studentNumber)) {
                 strings[0] = "";
@@ -318,13 +320,13 @@ public class Ex_10 {
                 }
             }
             if (!isEmpty) {
-                String line = String.join(",", linhas);
+                String line = String.join(",", linhas); //Adiciona "," antes de cada elemento
                 printWriter.println(line);
             }
         }
         printWriter.close();
         /*
-        //esta versão, parecida comanterior não funciona, imprime as virgulas na mesma.
+        //Esta versão, parecida com anterior não funciona, imprime as virgulas na mesma.
         for (String[] linhas : matrix) {
             for (String elemento : linhas) {
                 if (elemento.isEmpty()) {
@@ -338,7 +340,7 @@ public class Ex_10 {
 
          */
         /*
-        //Passa o resto das linhas para o csv, mas a linha em branco com as virgulas.
+        //Passa o resto das linhas para o csv, mas fica a linha em branco com as virgulas.
         for (String[] strings : matrix) {
             String line = String.join(",", strings);
             printWriter.println(line);
@@ -347,7 +349,7 @@ public class Ex_10 {
         */
         /*
         //Consigo meter a linha toda com espaços, mas preciso resolver strings[0] que não será elegante.
-        //Ideal seria analisar tudo(ver versão acima de tudo)
+        //Ideal seria analisar tudo (ver versão acima de tudo).
          for (String[] strings : matrix) {
             String line = String.join(",", strings);
             if (Objects.equals(strings[0], "")){
@@ -361,7 +363,7 @@ public class Ex_10 {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
-        String path = "Fichas_java/Files_Ficha_07/exercicio_10.csv";
+        //String path = "Fichas_java/Files_Ficha_07/exercicio_10.csv";
         String pathTeste = "Fichas_java/Files_Ficha_07/testeEx_10.csv";
 
         int option;
@@ -371,18 +373,17 @@ public class Ex_10 {
         do {
             System.out.print("**** MENU INICIAL ****\n" +
                     "     -- Opções --\n" +
-                    "1. Pesquisas\n" +
-                    "2. Criar Formando\n" +
-                    "3. Editar Formando\n" +
-                    "4. Eliminar Formando\n" +
-                    "5. Sair\n" +
-                    "Opção: ");
+                    "1. Pesquisas \uD83D\uDD0E\n" +
+                    "2. Criar Formando \u2795\n" +
+                    "3. Editar Formando \uD83D\uDCDD\n" +
+                    "4. Eliminar Formando \uD83D\uDC80\n" +
+                    "5. Sair ❌\n" +
+                    "Opção \uD83D\uDCBB: ");
             option = input.nextInt();
 
             switch (option) {
                 case 1:
                     searchMenu();
-
                     break;
                 case 2:
                     addNewStudent(readFileToMatrix(pathTeste), pathTeste);
@@ -394,7 +395,7 @@ public class Ex_10 {
                     deleteStudentData(readFileToMatrix(pathTeste), pathTeste);
                     break;
                 case 5:
-                    System.out.println("\nAté à próxima! :-)");
+                    System.out.println("\nAté à próxima! \uD83D\uDE09");
                     break;
                 default:
                     System.out.println("\nOpção inválida!");

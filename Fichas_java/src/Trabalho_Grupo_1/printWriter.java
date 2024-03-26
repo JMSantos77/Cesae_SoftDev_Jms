@@ -13,12 +13,14 @@ import java.util.Scanner;
 public class printWriter {
 
     /**
-     * Apaga uma linha passada por parâmetro,
+     * Apaga uma linha de um ficheiro passada por parâmetro,
      * passa para um ficheiro temporário e reescreve o original.
      * @param lineToDelete Passa uma string como param para apagar.
      * @throws FileNotFoundException Lança erro caso não ache Ficheiro
      */
     public static void deleteLineInFile(String lineToDelete) throws FileNotFoundException {
+
+        //1ª passo: Abre File original, elimina linha e escreve para file temporário
         String inputPath = "Fichas_java/Files_Ficha_07/printwriterTeste.csv";
         String writePath = "Fichas_java/Files_Ficha_07/printwriterTeste2.csv";
 
@@ -42,7 +44,8 @@ public class printWriter {
             }
         }
          */
-        //Opção b) em que não imprimo essa linha, passando-a à frente, eliminando-a dessa forma.
+
+        //Opção b) Passa linha a apagar à frente, eliminando-a dessa forma.
         while (readFile.hasNextLine()) {
             line = readFile.nextLine();
             if (!Objects.equals(line, lineToDelete)) {
@@ -52,6 +55,7 @@ public class printWriter {
         printWriter.close();
         readFile.close();
 
+        //2ª passo: Leio file temp e passo para file original reescrevendo-o.
         inputPath = "Fichas_java/Files_Ficha_07/printwriterTeste2.csv";
         writePath = "Fichas_java/Files_Ficha_07/printwriterTeste.csv";
 
@@ -61,6 +65,7 @@ public class printWriter {
         readFile = new Scanner(inputFile);
         printWriter = new PrintWriter(writeFile);
 
+        //Escreve temp para original, reescrevendo-o.
         while (readFile.hasNextLine()) {
             line = readFile.nextLine();
             printWriter.println(line);
