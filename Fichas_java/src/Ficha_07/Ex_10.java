@@ -175,7 +175,7 @@ public class Ex_10 {
         int count = 0;
 
         //Acha os repetidos e imprime só esses, pq compara com a linha seguinte, logo count == 1.
-        //Se quisesse todos excluindo os repetidos, tinha de comparar consigo próprio e imprimia se count ==1.
+        //Se quisesse todos excluindo os repetidos, tinha de comparar consigo próprio e imprimia se count == 1. (i = 0 e j = 0)
         System.out.println("\nOs alunos inscritos em mais de um curso são:");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i + 1; j < matrix.length; j++) {
@@ -183,7 +183,7 @@ public class Ex_10 {
                     count++;
                 }
             }
-            if (count == 1) { // ==1 para que não se repita, só conta a ultima ocorrência, o que quer dizer que tinha mais de uma.
+            if (count == 1) { // ==1 para que não se repita, só conta a ultíma ocorrência, o que quer dizer que tinha mais de uma.
                 System.out.print(matrix[i][0] + " | ");
             }
             count = 0;

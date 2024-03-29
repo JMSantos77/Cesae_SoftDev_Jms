@@ -3,34 +3,27 @@ package Ficha_05_Extra_Arrays;
 import java.util.Scanner;
 
 public class Ex_09 {
+    /**
+     * Método Bubble sort.
+     * @param args
+     */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        int[] array = {2, 3, 4, 5, 3, 4, 2, 34, 2, 56, 98, 32, 54};
 
-        //int[] numbersArray = new int[10];
-        int[] numbersArray = {10,32,30,400,40,60,10,22,11,1};
-        int[] sortedArray = new int[10];
-
-        /*
-        for (int i = 0; i < numbersArray.length; i++) {
-            System.out.print("Insira um número no array[" + i + "]: ");
-            numbersArray[i] = input.nextInt();
-        }
-         */
-
-        sortedArray[0] = numbersArray[0];
-
-        for (int i = 0; i < numbersArray.length; i++) {
-            for (int j = 0; j < numbersArray.length; j++) {
-                if (numbersArray[i] < sortedArray[j]) {
-                    sortedArray[i] = numbersArray[i];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] < array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
                 }
             }
         }
 
-
-        System.out.println("\nOs elementos do seu array são:");
-        for (int j = 0; j < sortedArray.length; j++) {
-            System.out.println("Index[" + j + "]: " + sortedArray[j]);
+        System.out.println("Array Ordenado:");
+        for (int element : array) {
+            System.out.print(element + "|");
         }
+
     }
 }
