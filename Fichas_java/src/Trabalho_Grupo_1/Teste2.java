@@ -1,5 +1,7 @@
 package Trabalho_Grupo_1;
 
+import java.util.Arrays;
+
 public class Teste2 {
 
     /**
