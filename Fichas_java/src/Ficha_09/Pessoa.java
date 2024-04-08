@@ -12,6 +12,17 @@ public class Pessoa {
         this.idade = inIdade;
         this.altura = inAltura;
     }
+    public String getNome(){
+        return this.nome;
+    }
+
+    public int getIdade(){
+        return this.idade;
+    }
+
+    public double getAltura(){
+        return  this.altura;
+    }
 
     //Métodos
     public void printPessoa() {
